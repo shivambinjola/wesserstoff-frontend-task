@@ -163,8 +163,9 @@ const EventsAndCollections = () => {
                   slides={
                     <>
                       {dataForCollections.map((item: any, id) => (
-                        <SwiperSlide>
+                        <SwiperSlide key={id}>
                           <div
+                            key={id}
                             className={`text-white xl:w-[40vw] lg:h-full lg:w-[32vw] w-[100%] h-[40vh] lg:bg-none lg:p-0 p-10 ${
                               id == 0 && "bg-collectionSlideFirstbg"
                             } ${id == 1 && "bg-collectionSlideSecbg"} ${
@@ -225,8 +226,9 @@ const EventsAndCollections = () => {
                   slides={
                     <>
                       {dataForEvents.map((item: any, id) => (
-                        <SwiperSlide>
+                        <SwiperSlide key={id}>
                           <div
+                            key={id}
                             className={`flex flex-col relative text-white xl:w-[412px] lg:w-[32vw] w-[100%] lg:h-full h-[40vh] lg:bg-none ${
                               id == 0 && "bg-collectionSlideFifthbg"
                             } ${id == 1 && "bg-collectionSlideSecbg"} ${
@@ -312,8 +314,8 @@ const EventsAndCollections = () => {
             <div className="">
               {arrayoflettersec.map((item, id) => (
                 <p
-                  className={`font-bold rotate-90 ${item === " " && "h-3"}`}
                   key={id}
+                  className={`font-bold rotate-90 ${item === " " && "h-3"}`}
                 >
                   {item === " " ? "\u00A0" : item}
                 </p>
@@ -417,9 +419,10 @@ const EventsAndCollections = () => {
                           spaceBetween: 0,
                         },
                       }}
-                      slides={carData.map((item) => (
-                        <SwiperSlide>
+                      slides={carData.map((item, id) => (
+                        <SwiperSlide key={id}>
                           <Card
+                            key={id}
                             year={item.year}
                             by={item.by}
                             collectibleName={item.collectibleName}
@@ -483,9 +486,12 @@ const EventsAndCollections = () => {
                           spaceBetween: 0,
                         },
                       }}
-                      slides={images.map((item) => (
-                        <SwiperSlide className="flex">
-                          <div className="w-[192px] h-[198px] mx-auto rounded-lg overflow-hidden  xs:h-full">
+                      slides={images.map((item, id) => (
+                        <SwiperSlide key={id} className="flex">
+                          <div
+                            key={id}
+                            className="w-[192px] h-[198px] mx-auto rounded-lg overflow-hidden  xs:h-full"
+                          >
                             <Image
                               width={192}
                               height={198}
